@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export const products = [
+
 
     {
         id : 1 ,
@@ -39,7 +40,32 @@ export const products = [
 
 const Home = () => {
 
+    const Counter = React.memo( () => {
+        console.log("RENDER COUNTER")
+        return (
+
+            <></>
+        )
+    
+    })
+
+
+    console.log("RENDER")
+
+
     const navigate = useNavigate()
+    const [name , setName] = useState("");
+
+    const useMemoFunc = useMemo (  () => {
+     [...new Array(10000) ].forEach( (item) => {})
+
+     return 55;
+
+    } , []) 
+
+
+
+
 
   return (
     <div>
@@ -50,6 +76,16 @@ const Home = () => {
 
         ))
         }
+
+
+        <br></br>
+
+        <label>Input :  </label>
+        <input type='Text' onChange= { e => setName(e.target.value) } ></input>  <br></br>
+        {useMemoFunc}
+
+        {<Counter/>}
+
     </div>
   )
 }

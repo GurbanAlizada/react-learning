@@ -14,9 +14,6 @@ import Text from "../components/Text"
   const focusRef = useRef()
   const countRef = useRef(0)
 
-
-  console.log(name , "NAME")
-
   const myFunction = () =>{
       setVariable("Hi Bro")
   }
@@ -110,6 +107,7 @@ import Text from "../components/Text"
 
 
         <br></br>
+
 
         <Button  name = "Increase"  onClickFun={increase2}   /> <br></br>
        {countRef.current} <br></br>
